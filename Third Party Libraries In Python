@@ -1,0 +1,38 @@
+#requests for using API
+
+import requests
+
+url = "https://covid-19-data.p.rapidapi.com/report/country/name"
+
+country=input()
+
+querystring = {"date-format":"YYYY-MM-DD","format":"json","date":"2020-04-01","name":country}
+
+headers = {
+    'x-rapidapi-host': "covid-19-data.p.rapidapi.com",
+    'x-rapidapi-key': "1c8849585bmsh2c4673267953778p1af7b9jsne83ce0e0000b"
+    }
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+results=response.json()
+
+print(results[0]['provinces'])
+
+
+#mysql-connector for Database connection in python
+
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',database='sample',port='',user='',password='')
+mycursor=mydb.cursor()
+mycursor.execute('select * from student')
+result=mycursor.fetchall()
+for i in result:
+    print(i)
+    
+#Colorama for Giving color to text
+
+from colorama import init,Fore
+import Sample
+nick=input('Enter a name:')
+print(Fore.BLUE+'Initial is:'+Fore.GREEN+Sample.get_inital(force_uppercase=True,name=nick))
