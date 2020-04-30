@@ -1,0 +1,26 @@
+#using sorted function to sort in ascending order
+
+lst=[55,86,33,90,23,45]
+print(sorted(lst))
+
+#using sort() function to sort in acending order
+
+lst.sort()
+print(lst)
+
+#using sort(reverse=True) function to sort in descending order
+
+lst.sort(reverse=True)
+print(lst) 
+
+#using for or while loop to sort in ascending or descending order
+lst1=[55,86,33,90,23,45]
+temp=0
+for i in range(len(lst1)):
+    for j in range(i):
+        if lst1[i]<lst1[j]:
+            temp=lst1[i]
+            lst1[i]=lst1[j]
+            lst1[j]=temp
+
+print(lst1)
